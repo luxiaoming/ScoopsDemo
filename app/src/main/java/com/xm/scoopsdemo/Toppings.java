@@ -21,5 +21,4 @@ public class Toppings {
                 new Topping(ACCENT, "Accent")
         };
     }
-
 }

@@ -3,16 +3,18 @@
 
     <!-- Dark  -->
     <style name="Theme.Scoop" parent="Theme.AppCompat.NoActionBar">
+
         <!-- Palatte -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
+
         <!-- Theming Elements -->
         <item name="toolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
         <item name="toolbarItemTint">#fff</item>
-        <item name="textColor">@color/colorControlHighlight</item>
+
     </style>
 
     <!-- Light -->
@@ -23,7 +25,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
-        <item name="textColor">@color/colorAccent</item>
+
         <!-- Theming Elements -->
         <item name="toolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
