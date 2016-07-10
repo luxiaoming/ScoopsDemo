@@ -72,3 +72,46 @@
 demo地址   https://github.com/luxiaoming/ScoopsDemo
 
 ![](http://upload-images.jianshu.io/upload_images/1603789-e901d5c4c79b1642?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+简要说明
+
+通过注释方式，完成多主题的效果更换。可以减少一些代码，使得代码更清晰一些。![](http://upload-images.jianshu.io/upload_images/1603789-3f4cb364baa7e98b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+使用说明
+
+1 首先写一个注释类
+![](http://upload-images.jianshu.io/upload_images/1603789-2ed64f45c3b3d195?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+2 在MainApp
+初始化的时候，将注释通过addToppings方式设置进去
+
+![](http://upload-images.jianshu.io/upload_images/1603789-4cd88281c311743e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)3 在MainActivity
+使用注释@BindToppingStatus 标记下状态栏的颜色跟随
+使用注释@BindTopping 标记下某个控件的颜色跟随
+@BindTopping标记里面还可以有参数
+1 value对应Toppings里面的某个值
+2 adapter 跟上一个适配器，主要是为了实现某些控件自定义的设置颜色方案
+3 interpolator 可以配置颜色切换过程效果，比如AccelerateInterpolator.class
+具体效果如下
+代码可以看到还有一个注释，叫 @BindView(R.id.fab) 这个就是之前讲的Butter Knife ，不了解的可以在文章末尾看到地址
+
+![](http://upload-images.jianshu.io/upload_images/1603789-7bb6b289b42693ed?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)4使用
+在ButterKnife.bind(this);绑定了界面view后，使用 Scoop.sugarCone().bind(this);将view ，适配器和动画切换效果设置进来
+在需要更新颜色的地方，使用Scoop.sugarCone().update即可，参数为第一个值为更新的注释类型，比如Toppings.PRIMARY_DARK参数二为颜色值。
+
+![](http://upload-images.jianshu.io/upload_images/1603789-a3c6748c590fdd36?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+5 ColorAdapter适配器
+如果需要自己自定义主题更换后的view颜色变换动作（主要是有时候不符合我们的需求，比如我们想动态改文本颜色，高亮色等），我们就需要自定义一个实现ColorAdapter的类，比如ButtonColorAdapter接口 ColorAdapter定义了两个方法
+设置新的颜色值
+void applyColor(T view, @ColorInt int color);
+获取当前颜色值
+int getColor(T view);
+
+![](http://upload-images.jianshu.io/upload_images/1603789-03b7dfca5280e55b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+6 主题bug
+1 使用 @BindTopping 注释的时候，必须加上adapter=XXX.class 如果用默认的 ，请加上adapter = DefaultColorAdapter.class
+2 默认的设置ScoopSettingsActivity界面，当设置为默认主题的时候，会出现bug。原因是这个界面指定了主题android:theme=”@style/Theme.AppCompat.Light” 如果我们默认的界面指定的跟这个不一样，则这个设置界面则会在默认主题的时候出错，和设置的效果不一致。解决方案：自己写一个设置界面呗。
+
+7 demo地址
+https://github.com/luxiaoming/ScoopsDemo
+Butter Knife 注释编程阅读地址：
+http://mp.weixin.qq.com/s?__biz=MzI1MjMyOTU2Ng==&mid=2247483660&idx=1&sn=9fc37fdb8f84763896b2696c03070db0&scene=4#wechat_redirect
+![](http://upload-images.jianshu.io/upload_images/1603789-cf139f71e77e5843?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
