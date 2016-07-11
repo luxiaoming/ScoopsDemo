@@ -210,6 +210,27 @@ public class MainActivity extends AppCompatActivity {
         recreate();
     }
 
+    @OnClick(R.id.button_colored)
+    public void ScoopsMode()
+    {
+        switch (mMode)
+        {
+            case AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM:
+                mMode=AppCompatDelegate.MODE_NIGHT_YES;
+                break;
+            case AppCompatDelegate.MODE_NIGHT_YES:
+                mMode=AppCompatDelegate.MODE_NIGHT_NO;
+                break;
+            case AppCompatDelegate.MODE_NIGHT_NO:
+                mMode=AppCompatDelegate.MODE_NIGHT_AUTO;
+                break;
+            case AppCompatDelegate.MODE_NIGHT_AUTO:
+                mMode=AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                break;
+        }
+        Scoop.getInstance().chooseDayNightMode(mMode);
+        recreate();
+    }
 
     /***********************************************************************************************
      *

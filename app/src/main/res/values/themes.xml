@@ -34,7 +34,7 @@
 
     <!-- DayNight -->
     <style name="Theme.Scoop.DayNight" parent="Theme.AppCompat.DayNight.NoActionBar">
-
+        <item name="textColor">@color/colorPrimaryAlt1</item>
         <!-- Palatte -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
