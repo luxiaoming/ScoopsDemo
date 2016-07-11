@@ -3,13 +3,12 @@
 
     <!-- Dark  -->
     <style name="Theme.Scoop" parent="Theme.AppCompat.NoActionBar">
-
+        <item name="textColor">@color/colorAccent</item>
         <!-- Palatte -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
-
         <!-- Theming Elements -->
         <item name="toolbarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <item name="toolbarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>

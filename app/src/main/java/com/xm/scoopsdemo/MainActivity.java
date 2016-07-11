@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -118,6 +119,9 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
 
+    @BindView(R.id.switchButton)
+    Button mSwitchButton;
+
     /***********************************************************************************************
      *
      * Lifecycle Methods
@@ -180,6 +184,32 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @AppCompatDelegate.NightMode
+    private static int mMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+
+    @OnClick(R.id.switchButton)
+    public void swicthMode()
+    {
+        switch (mMode)
+        {
+            case AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM:
+                mMode=AppCompatDelegate.MODE_NIGHT_YES;
+                break;
+            case AppCompatDelegate.MODE_NIGHT_YES:
+                mMode=AppCompatDelegate.MODE_NIGHT_NO;
+                break;
+            case AppCompatDelegate.MODE_NIGHT_NO:
+                mMode=AppCompatDelegate.MODE_NIGHT_AUTO;
+                break;
+            case AppCompatDelegate.MODE_NIGHT_AUTO:
+                mMode=AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+                break;
+        }
+        getDelegate().setLocalNightMode(mMode);
+        recreate();
+    }
+
 
     /***********************************************************************************************
      *

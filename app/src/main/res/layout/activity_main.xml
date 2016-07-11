@@ -58,9 +58,8 @@
             <Button
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
-
-                android:text="Button"
-                android:id="@+id/button"
+                android:text="switch-mode"
+                android:id="@+id/switchButton"
                 />
 
             <Button style="@style/Widget.AppCompat.Button.Colored"
@@ -153,10 +152,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
-
             android:text="Primary Color"
             android:textSize="14sp"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="?attr/textColor"
             android:fontFamily="sans-serif-medium"
             />
 
