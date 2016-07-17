@@ -7,9 +7,6 @@
 
 ![一个显示图](https://github.com/luxiaoming/dagger2Demo/raw/master/images/0.jpg)
 ![](http://upload-images.jianshu.io/upload_images/1603789-c4636a111ee03306?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-#Scoops android app多主题架构
-
-![](http://upload-images.jianshu.io/upload_images/1603789-c4636a111ee03306?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ##基本用法
 
